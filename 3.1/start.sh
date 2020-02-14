@@ -6,9 +6,9 @@ stopServices() {
 }
 trap stopServices TERM
 
-service postgresql start
+#service postgresql start
 service apache2 start
 
 # fork a process and wait for it
-tail -f /var/log/postgresql/postgresql-9.5-main.log &
+tail -f /var/log/apache2/*.log &
 wait
